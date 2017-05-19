@@ -1,0 +1,36 @@
+<view class="success">
+    <view class="success-info">
+        <view class="success-icon">
+            <text>勾</text>
+        </view>
+        <view class="success-character">
+            <text class="success-hint">恭喜您, 询价成功~</text>
+            <text class="contact-dealer">稍后会有经销商与您联系</text>
+        </view>
+    </view>
+    <view class="rests-model" wx:if="{{modelList.length}}">
+        <view class="model-header">
+           <text>询价此车型的人还关注</text>
+            <view class="switchover" bindtap="switchover">
+                <text class="switchover-icon">刷</text>
+                <text>换一批</text>
+            </view>
+        </view>
+        <view class="model-wrapper"> 
+            <view wx:for="{{modelList[modelIndex]}}" class="model-list">
+                <image src="{{item.img}}" style="width:150rpx;height:100rpx;"></image>
+                <view class="model-info">
+                    <text class="model-name">{{item.F_ProductName}}</text>
+                    <view class="ask-number">
+                        <text class="ask-amount">{{item.F_WeekClickCount}}</text>
+                        <text>人成功询价</text>
+                    </view>
+                   
+                </view>
+                <view class="footer-price {{item.text? 'footer-price-checked' : ''}}" data-productid="{{item.F_ProductId}}" data-index="{{index}}" bindtap="goFooterPrice">
+                    <text>{{item.text ? item.text : '一键询价'}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

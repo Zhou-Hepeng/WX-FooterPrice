@@ -1,0 +1,34 @@
+<!--pages/statement/statement.wxml-->
+<view class="statement">
+    <view class="statement-model">  
+        <view class="statement-header">  
+            <text>用户须知</text>
+        </view>
+        <view class="statement-info"> 
+            <text>1、北京卡车之家信息技术股份有限公司是处理通过本网站（简称“网站”）收集的所有个人信息的管理者。北京卡车之家信息技术股份有限公司尊重您的隐私，遵照中华人民共和国相关处理网络个人信息的规定来处理您的信息。</text>
+            <text>2、本声明将介绍我们如何处理通过网站收集的所有个人信息，以及访问和更正这些个人信息的权利。</text>
+            <text>3、北京卡车之家信息技术股份有限公司享有变更本声明的权利，这些变更信息在更改的声明发布时立即生效。建议您定期阅读声明，了解声明变更的情况</text>
+        </view>
+    </view>
+    <view class="statement-employ">  
+        <view class="statement-header">  
+            <text>个人信息的使用和披露</text>
+        </view>
+        <view class="statement-info"> 
+            <text>1、您同意，北京卡车之家信息技术股份有限公司可以通过以下方式对个人信息进行使用和披露（包含对于个人信息的存储和处理）：</text>
+            <text>① 我们（含分支机构）自行使用；</text>
+            <text>② 我们向相关经销商、厂商及集团披露并由其使用；</text>
+            <text>③ 我们及关联公司及相关经销商、厂商为满足您的需求，通过您提供的信息与您联系。</text>
+        </view>
+    </view>
+    <view class="statement-model">  
+        <view class="statement-header">  
+            <text>更正或投诉</text>
+        </view>
+        <view class="correct"> 
+            <text>如果您需要查询、修改或更正您的个人信息，或对个人信息保护问题有任何疑问或投诉，您可以拨打电话</text>
+            <text class="phone" data-phone="010-85788568" bindtap="dial"> 010-85788568 </text>
+            <text>联系我们。</text>
+        </view>
+    </view>
+</view>

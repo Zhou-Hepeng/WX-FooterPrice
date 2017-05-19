@@ -1,0 +1,31 @@
+.statement-model{
+    padding:30rpx 30rpx 0;
+}
+.statement-header{
+    margin-bottom:20rpx;
+    font-size: 32rpx;
+    color: #586C94;
+}
+.statement-info text{
+    display: flex;
+    flex: 1;
+    margin-bottom:20rpx;
+    font-size: 28rpx;
+    color: #333333;
+    line-height:40rpx;
+}
+.statement-employ{
+    padding:10rpx 30rpx 0;
+}
+.statement-employ .statement-info text{
+    margin-bottom:0;
+}
+.correct text{
+    font-size: 28rpx;
+    color: #333333;
+}
+.correct .phone{
+    color:#f60;
+    text-decoration: underline;
+    white-space: nowrap;
+}

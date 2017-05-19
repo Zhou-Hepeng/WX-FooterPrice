@@ -1,0 +1,16 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/location/location",
+    "pages/logs/logs",
+    "pages/statement/statement",
+    "pages/success/success"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "询底价",
+    "navigationBarTextStyle":"#fff"
+  }
+
+}

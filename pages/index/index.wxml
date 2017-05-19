@@ -1,0 +1,107 @@
+<!--index.wxml-->
+<view class="container">
+  <scroll-view  scroll-y="true">
+    <!--车型图片-->
+    <view class="truck-img">
+      <image style="width:750rpx;height:500rpx;" src="{{truckInfo.ProductSrc}}"></image>
+    </view>
+    <!--输入信息-->
+    <view class="import-wrapper">
+      <view class="user-name">
+        <text>*</text>
+        <input placeholder="请填写您的姓名(1-6个汉字)" bindinput="importName"/>
+      </view>
+      <view class="user-phone">
+        <text>*</text>
+        <input type="number" placeholder="请填写您的手机号"  bindinput="importPhone"/>
+      </view>
+    </view>
+    <!--选地区-->
+    <view class="select-location" bindtap="goSelectLocation">
+      <text class="label">*</text>
+      <text>提车地区</text>
+      <text class="province-name">{{locationInfo.provincename}}</text>
+      <text class="city-name">{{locationInfo.cityname}}</text>
+      <text class="go-location-icon">去</text>
+    </view>
+
+    <!--经销商-->
+    <view class="dealer">
+      <view class="dealer-header">
+        <text>选择询价经销商（最多可选择3家）</text>
+      </view>
+      <view wx:if="{{dealerData.length}}" wx:for="{{dealerData}}" class="dealer-list" data-index="{{index}}" data-dealerid="{{item.DealerId}}" bindtap="selectDealer">
+        <view class="select-dealer">
+            <image wx:if="{{dealerSelected[index]}}" class="seleceed-dealer" style="width:36rpx;height:36rpx" src="{{dealerSelected[index]?'https://s.kcimg.cn/wap/images/detail/checked.png':''}}"></image>
+        </view>
+        <view class="dealer-info">
+          <view class="dealer-name">
+            <text>{{item.Name}}</text>
+            <image class="vip-dealer" wx:if="{{item.IsCharge == 1}}" src="https://s.kcimg.cn/wap/images/detail/vip_dealer.png"></image>
+          </view>
+          <text class="dealer-address">{{item.Address}}</text>
+        </view>
+      </view>
+      <view wx:if="{{!dealerData.length}}" class="empty-list">
+          <view class="empty-icon">
+              <text>无</text>
+          </view>
+          <text>很遗憾~ 没有相关内容</text>
+      </view>
+    </view>
+
+    <!--参数配置-->
+    <view class="parameter">
+      <view class="parameter-header">
+        <text>参数配置</text>
+      </view>
+      <scroll-view  class="parameter-nav" scroll-x="true">
+          <view wx:for="{{parameterData.params}}" wx:if="{{item.list.length>0}}" class="parameter-nav-list {{index==parameterIndex?'parameter-selected':''}}" bindtap="selectParameter" data-index="{{index}}">
+            <text>{{item.F_ParameterTypeName}}</text>
+          </view>
+      </scroll-view>
+      <view class="parameter-content">
+        <view wx:for="{{parameterData.params}}" wx:if="{{index==parameterIndex && item.list.length > 0}}" class="parameter-list">
+          <view wx:for="{{item.list}}" class="parameter-info-list">
+            <view class="parameter-key">
+              <text>{{item.F_ParameterName}}</text>
+            </view>
+            <view class="parameter-value">
+              <text>{{item.value}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!--个人信息保护声明-->
+    <view class="statement">
+      <view class="select-statement" bindtap="selectStatement">
+        <image wx:if="{{statementSelected}}" class="selected-statement" src="{{statementSelected ? 'https://s.kcimg.cn/wap/images/detail/statement-checked.png' : ''}}"></image>
+      </view> 
+      <text>我同意</text>
+      <text class="statement-info" bindtap="goStatement">《个人信息保护声明》</text>
+    </view>
+  </scroll-view>
+  <!--询底价按钮-->
+  <view class="footer-price-button" bindtap="submitData">
+    <text>询底价</text>
+  </view>
+  <!--错误提示-->
+  <view wx:if="{{errPop}}" class="err-pop">
+      <view class="err-content">
+          <view class="err-text">
+            <text>{{errText}}</text>
+          </view>
+          <view class="err-button" bindtap="closeErrPop">
+            <text>确定</text>
+          </view> 
+      </view>
+  </view>
+  <!--<view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>-->
+</view>

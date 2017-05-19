@@ -1,0 +1,73 @@
+<view class="wrapper">
+<scroll-view class="location" scroll-y="true" scroll-into-view="{{navInfo}}" scroll-with-animation="true">
+    <view class="search">
+        <input type="text" bindfocus="searching" placeholder="请输入城市名称或首字母查询" bindinput="searchResult"/>
+        <text>搜</text>
+    </view>
+    <view class="hot-location" wx:if="{{hotLocation.length}}">
+        <view class="hot-header">
+            <text>定位/常用</text>
+        </view>
+        <view class="hot-content">
+            <view class="hot-list" wx:for="{{hotLocation}}" data-cityname="{{item.cityname}}" data-citysn="{{item.citysn}}" data-provincename="{{item.provincename}}" data-provincesn="{{item.provinceid}}" bindtap="speedySelectLocation">
+                <text wx:if="{{index==0}}" class="hot-icon">位</text>
+                <text>{{item.cityname}}</text>
+            </view>
+        </view>
+    </view>
+    <!--地区列表-->
+    <view class="location-content">
+        <view wx:for="{{locationList}}" class="location-model">
+            <view class="model-header" id="{{indexNav[index]}}">
+                <text>{{indexNav[index]}}</text>
+            </view>
+            <view wx:for="{{item}}" class="model-list" data-provincename="{{item.F_ProvinceName}}" data-provincesn="{{item.F_ProvinceId}}" bindtap="selectProvince">
+                <view class="model-info {{item.F_ProvinceId == locationInfo.provincesn ? 'location-selected':''}}">
+                    <text>{{item.F_ProvinceName}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+  <!--indexNav-->
+    <view class="index-nav" >
+        <view>
+            <view wx:for="{{indexNav}}" class="nav-list"  data-index="{{indexNav[index]}}"  bindtouchstart="indexNav"  bindtouchmove="indexNav"  bindtouchend="indexNav">
+                <text  data-index="{{item}}">{{item}}</text>
+            </view>
+        </view>
+    </view>
+    <!--提示框-->
+    <view style="{{navInfoShow?'opacity:1;display:block':'opacity:0;display:none'}}" class="index-selected">
+        <text>{{navInfo}}</text>
+    </view>
+    
+    <!--城市列表-->
+    <scroll-view style="{{cityListPop?'right:0;':'right:-100%'}}" class="city-wrapper" scroll-y="true">
+        <view class="city-header">
+            <text class="city-back" bindtap="cityPopHide">回</text>
+            <text class="city-title">{{locationInfo.provincename}}</text>
+        </view>
+        <view class="city-content" wx:if="{{cityList.length}}">
+            <view wx:for="{{cityList}}" data-citysn="{{item.id}}" data-cityname="{{item.name}}" class="city-list {{item.id == locationInfo.cityid ? 'location-selected':''}}" bindtap="selectCity">
+                <text>{{item.name}}</text>
+            </view>
+        </view>
+        <view wx:else class="empty-list">
+            <view class="empty-icon">
+                <text>无</text>
+            </view>
+            <text>很遗憾~ 没有相关内容</text>
+        </view>
+    </scroll-view>
+
+
+    <!--搜素结果列表-->
+    <view wx:if="{{searchResultPop}}" class="search-result">
+        <scroll-view class="search-model" scroll-y="true">
+            <view wx:for="{{searchResultData}}" class="result-list" data-cityname="{{item.cityName}}" data-citysn="{{item.cityId}}" data-provincename="{{item.provinceName}}" data-provinceId="{{item.provinceId}}" bindtap="speedySelectLocation">
+                <text>{{item.cityName}}</text>
+            </view>
+        </scroll-view>
+    </view>
+</view>

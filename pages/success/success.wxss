@@ -1,0 +1,110 @@
+/* pages/success/success.wxss */
+.success{
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background-color:#EFEFF4;
+}
+.success-info{
+    display: flex;
+    padding:50rpx 0;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    background-color:#fff;
+}
+.success-icon{
+    width:80rpx;
+    height:80rpx;
+    line-height: 80rpx;
+    font-size:40rpx;
+    color:#f60;
+    font-family: 'detail';
+    text-align: center;
+    border:1px solid #f60;
+    border-radius: 50%;
+}
+.success-character{
+    margin-left:20rpx;
+}
+.success-hint{
+    display: flex;
+    flex:1;
+    line-height: 40rpx;
+    font-size: 32rpx;
+    color: #FF6600;
+}
+.contact-dealer{
+    font-size: 24rpx;
+    color: #666666;
+    letter-spacing: 0;
+    line-height: 32rpx;
+}
+/*其他人还关注*/
+.model-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height:70rpx;
+    padding:0 30rpx;
+    line-height:70rpx;
+    font-size: 14px;
+    color: #999999;
+}
+.switchover{
+    font-size: 24rpx;
+    color: #586C94;
+}
+.switchover-icon{
+    font-family: 'detail';
+    margin-right:5rpx;   
+}
+.model-wrapper{
+    background-color:#fff;
+}
+.model-list{
+    position:relative;
+    display: flex;
+    flex-direction: row;
+    padding:30rpx;
+    border-bottom:1px solid #eee;
+}
+.model-info{
+    display: flex;
+    flex:1;
+    margin-left:20rpx;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.model-name{
+    font-size: 24rpx;
+    color: #333333;
+    line-height: 32rpx;
+}
+.ask-number{
+    font-size: 24rpx;
+    color: #3F3F3F;
+    line-height: 28rpx;
+}
+.ask-amount{
+    color:#f60;
+}
+.footer-price{
+    position:absolute;
+    right:30rpx;
+    bottom:30rpx;
+    width:120rpx;
+    height:44rpx;
+    line-height:44rpx;
+    text-align: center;
+    color:#fff;
+    font-size:24rpx;
+    border-radius: 4rpx;
+    background-color:#f60;
+}
+.footer-price-checked{
+    color:#bbb;
+    background-color:#eee;
+}
