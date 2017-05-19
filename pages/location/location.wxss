@@ -73,7 +73,7 @@
     white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
 }
 /*省份列表*/
-.location-content{
+.location-model{
     background-color:#fff;
 }
 .model-header{

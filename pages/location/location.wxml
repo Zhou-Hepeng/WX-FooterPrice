@@ -9,22 +9,20 @@
             <text>定位/常用</text>
         </view>
         <view class="hot-content">
-            <view class="hot-list" wx:for="{{hotLocation}}" data-cityname="{{item.cityname}}" data-citysn="{{item.citysn}}" data-provincename="{{item.provincename}}" data-provincesn="{{item.provinceid}}" bindtap="speedySelectLocation">
+            <view class="hot-list" wx:for="{{hotLocation}}" data-cityname="{{item.cityname}}" data-citysn="{{item.citysn}}" data-provincename="{{item.provincename}}" data-provincesn="{{item.provincesn}}" bindtap="speedySelectLocation">
                 <text wx:if="{{index==0}}" class="hot-icon">位</text>
                 <text>{{item.cityname}}</text>
             </view>
         </view>
     </view>
     <!--地区列表-->
-    <view class="location-content">
-        <view wx:for="{{locationList}}" class="location-model">
-            <view class="model-header" id="{{indexNav[index]}}">
-                <text>{{indexNav[index]}}</text>
-            </view>
-            <view wx:for="{{item}}" class="model-list" data-provincename="{{item.F_ProvinceName}}" data-provincesn="{{item.F_ProvinceId}}" bindtap="selectProvince">
-                <view class="model-info {{item.F_ProvinceId == locationInfo.provincesn ? 'location-selected':''}}">
-                    <text>{{item.F_ProvinceName}}</text>
-                </view>
+    <view wx:for="{{locationList}}" class="location-model" id="{{indexNav[index]}}">
+        <view class="model-header">
+            <text>{{indexNav[index]}}</text>
+        </view>
+        <view wx:for="{{item}}" class="model-list" data-provincename="{{item.F_ProvinceName}}" data-provincesn="{{item.F_ProvinceId}}" bindtap="selectProvince">
+            <view class="model-info {{item.F_ProvinceId == locationInfo.provincesn ? 'location-selected':''}}">
+                <text>{{item.F_ProvinceName}}</text>
             </view>
         </view>
     </view>
@@ -65,7 +63,7 @@
     <!--搜素结果列表-->
     <view wx:if="{{searchResultPop}}" class="search-result">
         <scroll-view class="search-model" scroll-y="true">
-            <view wx:for="{{searchResultData}}" class="result-list" data-cityname="{{item.cityName}}" data-citysn="{{item.cityId}}" data-provincename="{{item.provinceName}}" data-provinceId="{{item.provinceId}}" bindtap="speedySelectLocation">
+            <view wx:for="{{searchResultData}}" class="result-list" data-cityname="{{item.cityName}}" data-citysn="{{item.cityId}}" data-provincename="{{item.provinceName}}" data-provincesn="{{item.provinceId}}" bindtap="speedySelectLocation">
                 <text>{{item.cityName}}</text>
             </view>
         </scroll-view>

@@ -10,6 +10,14 @@
             <text>3、北京卡车之家信息技术股份有限公司享有变更本声明的权利，这些变更信息在更改的声明发布时立即生效。建议您定期阅读声明，了解声明变更的情况</text>
         </view>
     </view>
+    <view class="statement-model">  
+        <view class="statement-header">  
+            <text>个人信息的范围和收集</text>
+        </view>
+        <view class="statement-info"> 
+            <text>（1）我们收集您的个人信息的最终目的是为了向您提供更好的产品、服务，优化并丰富您的用户体验，这些个人信息系能够单独或者与其他信息结合识别您的个人身份的信息，包括：</text><text>①姓名</text><text>②移动电话</text><text>③您在网站的表格上输入的其他信息（电子邮箱、车牌号、住址等</text><text>④在您上载到网站的内容中包含的任何个人信息</text> <text>（2）以上个人信息均是您自愿提供。您有权拒绝提供，但如果您拒绝提供某些个人信息，您将可能无法使用我们提供的产品、服务，或者可能对您使用产品或服务造成一定的影响。</text><text>（3）对于不满 18 岁的用户，须在其法定监护人已经阅读本声明并且许可的情况下，通过网站提交个人信息。</text>
+        </view>
+    </view>
     <view class="statement-employ">  
         <view class="statement-header">  
             <text>个人信息的使用和披露</text>

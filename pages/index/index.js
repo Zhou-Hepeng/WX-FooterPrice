@@ -340,11 +340,16 @@ Page({
 
     //验证城市
     if(!locationInfo.citysn){
-      // this.setData({
-      //   errText:'请选择城市',
-      //   errPop:true
-      // })
-      // return      
+      if(locationInfo.provincesn == 820000 || locationInfo.provincesn == 810000 || locationInfo.provincesn == 710000){
+       
+      }else{
+         this.setData({
+          errText:'请选择城市',
+          errPop:true
+        })
+        return 
+      }
+    
     }else{
       submitData.citysn = locationInfo.citysn;
     }
@@ -359,7 +364,7 @@ Page({
       }
       if(this.data.dealerData.length && number == 0){
           this.setData({
-          errText:'最选择经销商',
+          errText:'请选择经销商',
           errPop:true
         })
         return       
@@ -389,6 +394,7 @@ Page({
     //加载中
     this.showLoading();
 
+    // console.log(submitData)
     wx.request({
       url:this.data.ajaxUrl + 'Dealer/submitClues.aspx?',
       data:submitData,
@@ -446,10 +452,14 @@ Page({
           })
         }
         console.log(res,'最终提交')
+      },
+      fail:() => {
+        this.setData({
+            errText:'网络错误啦~',
+            errPop:true
+          })
       }
     })
-    console.log(submitData)
-
   },
   //关闭报错弹层
   closeErrPop(){
